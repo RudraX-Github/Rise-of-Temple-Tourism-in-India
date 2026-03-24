@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sacred Economy: Comprehensive Report (2024-2032)</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        report: {
+                            bg: '#fdfbf7',       /* Paper White */
+                            surface: '#ffffff',
+                            text: '#1c1917',     /* Stone 900 */
+                            subtext: '#57534e',  /* Stone 600 */
+                            accent: '#ea580c',   /* Orange 600 */
+                            accentDim: '#fff7ed',/* Orange 50 */
+                            gold: '#b45309',     /* Amber 700 */
+                            border: '#e7e5e4'    /* Stone 200 */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scroll & Selection */
+        html { scroll-behavior: smooth; }
+        ::selection { background: #ea580c; color: white; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fdfbf7; }
+        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ea580c; }
+
+        /* Typography Utilities */
+        .drop-cap:first-letter {
+            float: left;
+            font-size: 3.5rem;
+            line-height: 0.8;
+            font-weight: 700;
+            padding-right: 0.5rem;
+            color: #ea580c;
+        }
+
+        /* Chart Containers */
+        .chart-container-lg { position: relative; height: 400px; width: 100%; }
+        .chart-container-sm { position: relative; height: 250px; width: 100%; }
+
+        /* Interactive Elements */
+        .region-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .region-card:hover {
+            border-left-color: #ea580c;
+            background-color: #fff7ed;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .accordion-content.open {
+            max-height: 2000px; /* Arbitrary large number */
+            transition: max-height 0.7s ease-in;
+        }
+        
+        /* Table Styles */
+        .data-table th { background-color: #fff7ed; color: #b45309; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; padding: 12px; }
+        .data-table td { padding: 12px; border-bottom: 1px solid #e7e5e4; font-size: 0.875rem; }
+        .data-table tr:last-child td { border-bottom: none; }
+
+        /* Timeline CSS */
+        .timeline-item { position: relative; padding-left: 2rem; border-left: 2px solid #e7e5e4; padding-bottom: 2rem; }
+        .timeline-item:last-child { border-left: 2px solid transparent; }
+        .timeline-dot { position: absolute; left: -0.4rem; top: 0; width: 0.8rem; height: 0.8rem; background: #ea580c; border-radius: 50%; border: 2px solid white; }
+    </style>
+</head>
+<body class="bg-report-bg text-report-text font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-report-border shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl text-report-accent">☸</span>
+                    <span class="text-xl font-serif font-bold tracking-tight">The Sacred Economy</span>
+                </div>
+                <div class="hidden lg:flex space-x-8 text-sm font-medium text-report-subtext">
+                    <a href="#introduction" class="hover:text-report-accent transition-colors">Overview</a>
+                    <a href="#economics" class="hover:text-report-accent transition-colors">Market Data</a>
+                    <a href="#corridors" class="hover:text-report-accent transition-colors">Corridors</a>
+                    <a href="#regions" class="hover:text-report-accent transition-colors">Regional Analysis</a>
+                    <a href="#infrastructure" class="hover:text-report-accent transition-colors">Infrastructure</a>
+                    <a href="#case-studies" class="hover:text-report-accent transition-colors text-report-accent">Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- SECTION 1: INTRODUCTION & PARADIGM SHIFT -->
+        <section id="introduction" class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="bg-report-accentDim text-report-accent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-orange-100">Assessment Report 2024–2032</span>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold mt-6 mb-6 leading-tight text-gray-900">The Renaissance of <br>Temple Tourism in India</h1>
+                <p class="text-xl text-report-subtext leading-relaxed">
+                    A comprehensive analysis of the structural transformation from "Passive Pilgrimage" to "Active Spiritual Tourism."
+                </p>
+            </div>
+
+            <div class="prose prose-lg mx-auto text-gray-700">
+                <p class="drop-cap">
+                    The Indian tourism landscape is undergoing a structural transformation of unprecedented magnitude. Historically, pilgrimage—<em>Tirtha Yatra</em>—was characterized by austerity and unorganized logistics. Today, we are witnessing the crystallization of a <strong>"Temple Economy,"</strong> a sophisticated ecosystem where ancient faith intersects with modern infrastructure and digital integration.
+                </p>
+                <p class="mt-4">
+                    Driven by policy interventions like <strong>PRASHAD</strong> and <strong>Swadesh Darshan</strong>, this shift is moving the devotee from a passive pilgrim to a consumer of heritage, culture, and premium hospitality. This report details the macro-economic implications, the "Corridor Model," and the critical challenges accompanying this explosive growth.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MACRO-ECONOMICS -->
+        <section id="economics" class="bg-white rounded-2xl shadow-sm border border-report-border p-8">
+            <div class="border-b border-report-border pb-6 mb-8">
+                <h2 class="text-3xl font-serif font-bold">1. Market Sizing & The Multiplier Effect</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Market Valuation Chart -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-report-gold">Market Valuation (USD Billions)</h3>
+                    <p class="text-sm text-gray-600 mb-6">
+                        The dedicated religious tourism market is set to triple by 2030 (CAGR 18.2%), while the broader ecosystem impact could reach $441 Billion by 2032.
+                    </p>
+                    <div class="chart-container-lg">
+                        <canvas id="marketChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- The Multiplier Effect Detail -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 text-report-gold">Daily Expenditure Analysis</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            While per-capita daily spend is lower than business travel, the aggregate volume creates a massive "trickle-down" economy.
+                        </p>
+                        <div class="chart-container-sm">
+                            <canvas id="spendChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Economic Impact Stats -->
+                    <div class="bg-report-accentDim rounded-xl p-6 border border-orange-100">
+                        <h4 class="font-bold text-report-accent uppercase text-sm mb-4">Case Study: Uttar Pradesh</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <div class="text-3xl font-serif font-bold text-gray-900">₹4 Lakh Cr</div>
+                                <div class="text-xs text-gray-600 mt-1">Projected Economic Boost</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-serif font-bold text-gray-900">₹5,000 Cr</div>
+                                <div class="text-xs text-gray-600 mt-1">Addtl. Tax Revenue (FY25)</div>
+                            </div>
+                            <div class="col-span-2 pt-4 border-t border-orange-200 mt-2">
+                                <p class="text-sm font-medium text-gray-800">The Ecosystem Impact:</p>
+                                <p class="text-xs text-gray-600 mt-1">Revenue trickles down to auto-rickshaws, boatmen, flower sellers, weavers (Banarasi sarees), and sculptors. Supporting 40-46 million jobs nationally.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE TEMPLE CORRIDORS (SUMMARY CARDS) -->
+        <section id="corridors">
+            <h2 class="text-3xl font-serif font-bold mb-8">2. The Era of Temple Corridors</h2>
+            <p class="max-w-3xl text-gray-600 mb-10">
+                A defining feature of the current phase is the shift to "Temple Corridors"—mega-projects clearing congestion to create heritage zones. This "Kashi Model" is the new blueprint.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                
+                <!-- Kashi Card (Summary) -->
+                <div class="bg-white p-8 rounded-xl border border-report-border shadow-sm group hover:border-report-accent transition-colors relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <span class="text-6xl">☸</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-4 relative">
+                        <h3 class="text-2xl font-serif font-bold">Kashi Vishwanath Corridor</h3>
+                        <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded">Completed</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-6">Inaugurated Dec 2021. Transformed narrow lanes into a majestic link between Ganga Ghats and the Sanctum.</p>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between py-2 border-b border-gray-100">
+                            <span class="text-gray-500">Total Footfall (2021-25)</span>
+                            <span class="font-bold">25.28 Crore</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-100">
+                            <span class="text-gray-500">Visitor Spending</span>
+                            <span class="font-bold">₹4k - ₹5k per capita</span>
+                        </div>
+                    </div>
+                    <a href="#kashi-deep-dive" class="inline-block mt-6 text-sm font-bold text-report-accent hover:text-report-gold transition-colors">
+                        Read Full Case Study ↓
+                    </a>
+                </div>
+
+                <!-- Ayodhya Card -->
+                <div class="bg-white p-8 rounded-xl border border-report-border shadow-sm group hover:border-report-accent transition-colors">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-serif font-bold">Ayodhya Ram Mandir</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Global Hub</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-6">Established as a global spiritual capital comparable to Vatican City.</p>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between py-2 border-b border-gray-100">
+                            <span class="text-gray-500">2024 Footfall</span>
+                            <span class="font-bold">11.2 Crores</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-100">
+                            <span class="text-gray-500">Infra Makeover</span>
+                            <span class="font-bold">USD 10 Billion</span>
+                        </div>
+                        <div class="mt-4 bg-gray-50 p-3 rounded text-xs text-gray-700">
+                            <strong>Challenge:</strong> Daily footfall of 2-3 Lakhs overwhelmed initial infra. Trust considering pass-based entry.
+                        </div>
+                    </div>
+                     <a href="#ayodhya-deep-dive" class="inline-block mt-6 text-sm font-bold text-report-accent hover:text-report-gold transition-colors">
+                        Read Full Case Study ↓
+                    </a>
+                </div>
+
+                <!-- Ujjain Card -->
+                <div class="bg-white p-6 rounded-xl border border-report-border shadow-sm group hover:border-report-accent transition-colors">
+                    <h3 class="text-xl font-serif font-bold mb-2">Mahakal Lok (Ujjain)</h3>
+                    <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">Decongestion Model</p>
+                    <div class="grid grid-cols-2 gap-4 text-sm mb-4">
+                        <div class="bg-report-bg p-2 rounded">
+                            <span class="block text-gray-500 text-xs">Pre-Corridor</span>
+                            <span class="font-bold">1.5 Cr/yr</span>
+                        </div>
+                        <div class="bg-report-bg p-2 rounded">
+                            <span class="block text-gray-500 text-xs">Post-Corridor</span>
+                            <span class="font-bold">5.28 Cr/yr</span>
+                        </div>
+                    </div>
+                    <a href="#ujjain-deep-dive" class="text-xs font-bold text-report-accent hover:text-report-gold transition-colors">Read Full Case Study ↓</a>
+                </div>
+
+                <!-- Puri Card -->
+                <div class="bg-white p-6 rounded-xl border border-report-border shadow-sm group hover:border-report-accent transition-colors">
+                    <h3 class="text-xl font-serif font-bold mb-2">Jagannath Heritage Corridor</h3>
+                    <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">Coastal Heritage</p>
+                    <ul class="text-sm text-gray-600 list-disc list-inside space-y-1 mb-4">
+                        <li>Cost: ₹943 Cr.</li>
+                        <li>75-meter unobstructed heritage zone.</li>
+                        <li>Green buffer zones for Rath Yatra safety.</li>
+                    </ul>
+                     <a href="#puri-deep-dive" class="text-xs font-bold text-report-accent hover:text-report-gold transition-colors">Read Full Case Study ↓</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: REGIONAL ATLAS (ACCORDION) -->
+        <section id="regions">
+            <h2 class="text-3xl font-serif font-bold mb-4">3. Regional Deep Dive: All Places</h2>
+            <p class="text-gray-600 mb-8">Detailed assessment of spiritual tourism growth across North, West, East, and South India.</p>
+
+            <div class="space-y-4">
+                
+                <!-- NORTH INDIA -->
+                <div class="border border-report-border rounded-xl overflow-hidden bg-white">
+                    <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleAccordion('north')">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">North India</h3>
+                            <p class="text-sm text-gray-500">UP, Uttarakhand, J&K, Himachal Pradesh</p>
+                        </div>
+                        <span class="text-2xl text-report-accent transform transition-transform" id="icon-north">+</span>
+                    </button>
+                    <div id="north" class="accordion-content border-t border-report-border bg-report-bg">
+                        <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-700">
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Uttar Pradesh: The Heartland</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Growth:</strong> Footfall +361% in 8 years (23.75 Cr in 2017 → 109.65 Cr in Q1 2025).</li>
+                                    <li><strong>Prayagraj:</strong> Hosted the historic <strong>Maha Kumbh 2025</strong>, setting new global records for congregation.</li>
+                                    <li><strong>Holy Trinity:</strong> Kashi, Prayagraj, and Ayodhya driving domestic dominance.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Uttarakhand: Char Dham Economics</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Yatra 2024:</strong> 3.8M visitors, ₹2,400 Cr direct revenue (Est. total ₹7,500 Cr).</li>
+                                    <li><strong>Heli-Tourism:</strong> Kedarnath operators earned ₹60 Cr in 48 days.</li>
+                                    <li><strong>Infra:</strong> All-Weather Road nearing completion. Ropeways (Sonprayag-Kedarnath) approved.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Jammu & Kashmir</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Vaishno Devi:</strong> 80 Lakh annual visitors. ₹500 Cr revenue. New Skyview gondola at Patnitop.</li>
+                                    <li><strong>Amarnath:</strong> Parvatmala scheme exploring ropeways for high-altitude access.</li>
+                                    <li><strong>Srinagar:</strong> Shankaracharya Temple slated for ropeway connectivity.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Himachal Pradesh</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Shakti Circuit:</strong> Connecting Jwala Devi, Chintpurni, Chamunda Devi.</li>
+                                    <li><strong>Offbeat:</strong> Promoting Chamba and Kinnaur (Buddhist-Hindu fusion) to disperse crowds from Shimla/Manali.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WEST INDIA -->
+                <div class="border border-report-border rounded-xl overflow-hidden bg-white">
+                    <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleAccordion('west')">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">West India</h3>
+                            <p class="text-sm text-gray-500">Gujarat, Maharashtra</p>
+                        </div>
+                        <span class="text-2xl text-report-accent transform transition-transform" id="icon-west">+</span>
+                    </button>
+                    <div id="west" class="accordion-content border-t border-report-border bg-report-bg">
+                        <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-700">
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Gujarat: Coastal Divinities</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Somnath:</strong> 97.93 Lakh visitors (23-24). Promenade developed.</li>
+                                    <li><strong>Dwarka:</strong> 83.54 Lakh visitors. New Expressway connectivity.</li>
+                                    <li><strong>Ambaji:</strong> Most visited (1.65 Cr/yr). PRASHAD scheme upgrading amenities.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Maharashtra: Trade & Faith</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Shirdi:</strong> Revenue ₹320-900 Cr depending on year. ₹16 Cr donation in 10 days of 2023.</li>
+                                    <li><strong>Ashtavinayak:</strong> Ministry of Tourism sanctioned projects for the 8-Ganesha circuit.</li>
+                                    <li><strong>Ropeways:</strong> Approved for Ekvira Devi and Saptashrungi for elderly access.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EAST & NORTH EAST -->
+                <div class="border border-report-border rounded-xl overflow-hidden bg-white">
+                    <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleAccordion('east')">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">East & North East</h3>
+                            <p class="text-sm text-gray-500">Odisha, Bihar, Assam</p>
+                        </div>
+                        <span class="text-2xl text-report-accent transform transition-transform" id="icon-east">+</span>
+                    </button>
+                    <div id="east" class="accordion-content border-t border-report-border bg-report-bg">
+                        <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-700">
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Odisha: Soul of the East</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Puri:</strong> Rath Yatra is the main economic event.</li>
+                                    <li><strong>Bhubaneswar:</strong> "Ekamra Kshetra" project developing Lingaraj Temple area.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Bihar: Land of Enlightenment</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Bodh Gaya:</strong> High international footfall. Convention centers funded by PRASHAD.</li>
+                                    <li><strong>Gaya:</strong> Vishnupad temple upgrading for Pind Daan rituals (millions annually).</li>
+                                </ul>
+                            </div>
+                            <div class="md:col-span-2">
+                                <h4 class="font-bold text-report-gold text-base mb-2">Assam & NE: The Mystic Hills</h4>
+                                <p class="mb-2"><strong>Kamakhya:</strong> Focal point. Ambubachi Mela celebrates goddess fertility.</p>
+                                <p><strong>Tribal Circuits:</strong> Nagaland & Chhattisgarh developing circuits under Swadesh Darshan focusing on nature worship.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOUTH INDIA -->
+                <div class="border border-report-border rounded-xl overflow-hidden bg-white">
+                    <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors" onclick="toggleAccordion('south')">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">South India</h3>
+                            <p class="text-sm text-gray-500">Andhra, TN, Kerala, Karnataka</p>
+                        </div>
+                        <span class="text-2xl text-report-accent transform transition-transform" id="icon-south">+</span>
+                    </button>
+                    <div id="south" class="accordion-content border-t border-report-border bg-report-bg">
+                        <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-700">
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Andhra Pradesh: Organized Behemoth</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Tirupati (TTD):</strong> Budget ₹5,141 Cr (24-25). Net worth ₹3 Trillion ($35B). 11 tonnes gold.</li>
+                                    <li><strong>Srivani Trust:</strong> Collected ₹650 Cr in 3 years to renovate dilapidated temples.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Tamil Nadu: Land of Temples</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Madurai:</strong> Pudu Mandapam renovation for 2026 Kumbhabhishekam.</li>
+                                    <li><strong>Rameswaram:</strong> Shoreline dev under PRASHAD.</li>
+                                    <li><strong>Thanjavur:</strong> Visitor surge post-"Ponniyin Selvan" movies.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Kerala: Forest Shrines</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Sabarimala:</strong> Record revenue ₹332 Cr (2024-25).</li>
+                                    <li><strong>Guruvayur:</strong> "Dwarka of South". ₹45 Cr amenities sanctioned.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-report-gold text-base mb-2">Karnataka</h4>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Hampi & Murdeshwar:</strong> Promoting "Shiva Circuit".</li>
+                                    <li><strong>Hoysala:</strong> UNESCO sites Belur/Halebeedu blending heritage & spiritual tourism.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 5: INFRASTRUCTURE & ENABLERS -->
+        <section id="infrastructure">
+            <h2 class="text-3xl font-serif font-bold mb-8">4. Infrastructure Ecosystem</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Rail & Road Tables -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-report-gold">Railways: The Vande Bharat Network</h3>
+                    <div class="overflow-x-auto bg-white rounded-lg border border-report-border mb-8">
+                        <table class="w-full data-table">
+                            <thead>
+                                <tr>
+                                    <th>Route</th>
+                                    <th>Sites Connected</th>
+                                    <th>Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">Banaras – Khajuraho</td>
+                                    <td>Varanasi, Prayagraj, Chitrakoot</td>
+                                    <td>Connects Shiva-Ram circuit. Saves 2.5 hrs.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Katra – Amritsar</td>
+                                    <td>Vaishno Devi, Golden Temple</td>
+                                    <td>Links Hindu & Sikh shrines.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Ayodhya – Anand Vihar</td>
+                                    <td>Ram Mandir</td>
+                                    <td>Direct link from National Capital.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Chennai – Madurai</td>
+                                    <td>Meenakshi Temple</td>
+                                    <td>High-speed Southern link.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Mumbai – Shirdi</td>
+                                    <td>Sai Baba Temple</td>
+                                    <td>Drastically cuts travel time.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-lg font-bold mb-4 text-report-gold">Ropeways: Parvatmala Pariyojana</h3>
+                    <div class="overflow-x-auto bg-white rounded-lg border border-report-border">
+                        <table class="w-full data-table">
+                            <thead>
+                                <tr>
+                                    <th>Project</th>
+                                    <th>Length</th>
+                                    <th>Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">Kedarnath</td>
+                                    <td>12.9 km</td>
+                                    <td>Sonprayag to Shrine. 8hr trek → 36 mins. Cost ₹4,081 Cr.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Hemkund Sahib</td>
+                                    <td>12.4 km</td>
+                                    <td>Govindghat to Shrine.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Varanasi Urban</td>
+                                    <td>N/A</td>
+                                    <td>Mass transit to decongest city (Station to Temple).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Policy & Hospitality -->
+                <div class="space-y-8">
+                    <div class="bg-report-accentDim p-6 rounded-xl border border-orange-100">
+                        <h3 class="font-bold text-report-accent uppercase text-sm mb-4">Policy Interventions</h3>
+                        <div class="space-y-4 text-sm text-gray-700">
+                            <div>
+                                <strong class="block text-gray-900">PRASHAD Scheme</strong>
+                                47 projects sanctioned. Outlay ₹1,594 Cr. Focus on "Hard" infra (Waiting halls, lighting, parking).
+                            </div>
+                            <div>
+                                <strong class="block text-gray-900">Swadesh Darshan 2.0</strong>
+                                Shift to "Destination-based" holistic development. Sustainable tourism at Hampi, Mamallapuram.
+                            </div>
+                            <div>
+                                <strong class="block text-gray-900">River Cruise Tourism</strong>
+                                "Cruise Bharat Mission". Ganga Vilas (Varanasi-Dibrugarh). Goal: 1.5M passengers by 2029.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-report-border">
+                        <h3 class="text-lg font-bold mb-4 text-report-gold">Hospitality & The Digital Shift</h3>
+                        <ul class="space-y-3 text-sm text-gray-700 list-disc list-inside">
+                            <li><strong>Premiumisation:</strong> Demand for rooms >₹7,000 up 20%. IHCL (Taj) expanding in Ayodhya/Haridwar.</li>
+                            <li><strong>Homestays:</strong> Ayodhya listings doubled in 1 year. NITI Aayog formalizing sector.</li>
+                            <li><strong>Budget Segment:</strong> OYO adding 500 hotels in religious towns in 2025.</li>
+                            <li><strong>Tech:</strong> "Temple 360" for online Darshan. AI crowd management in Tirupati. UPI for donations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 6: CASE STUDIES (MOVED HERE) -->
+        <section id="case-studies" class="space-y-16">
+            <h2 class="text-3xl font-serif font-bold mb-8">5. In-Depth Case Studies</h2>
+
+            <!-- 1. KASHI DEEP DIVE -->
+            <div id="kashi-deep-dive" class="bg-stone-900 text-white rounded-2xl overflow-hidden shadow-2xl">
+                <!-- Header -->
+                <div class="bg-report-accent p-8 md:p-12 text-center">
+                    <span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Case Study</span>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold mt-4">Kashi Vishwanath Corridor</h2>
+                    <p class="text-lg md:text-xl mt-4 opacity-90 max-w-2xl mx-auto">"Bridging Tradition and Modernity: Restoring the ritual axis between the Ganga and the Sanctum."</p>
+                </div>
+
+                <div class="p-8 md:p-12 space-y-16">
+                    <!-- Transformation Dashboard -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-report-accent mb-6">The Sugam Darshan Effect</h3>
+                            <p class="text-stone-300 mb-8 text-sm leading-relaxed">
+                                The project cleared 300 properties to expand the precinct from a congested 3,000 sq. ft. to 5 hectares. This decongestion unlocked massive capacity and economic velocity.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Daily Capacity</div>
+                                    <div class="text-2xl font-bold text-white mt-1">75,000</div>
+                                    <div class="text-xs text-green-400 mt-1">↑ vs congested alleys</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Visitor Surge (2 Yrs)</div>
+                                    <div class="text-2xl font-bold text-white mt-1">100 Mn+</div>
+                                    <div class="text-xs text-green-400 mt-1">Post-Inauguration</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Project Cost</div>
+                                    <div class="text-2xl font-bold text-white mt-1">₹900 Cr</div>
+                                    <div class="text-xs text-stone-400 mt-1">Including Rehab</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Economic Impact</div>
+                                    <div class="text-2xl font-bold text-white mt-1">₹1.25 L Cr</div>
+                                    <div class="text-xs text-stone-400 mt-1">UP Multiplier Effect</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-stone-800 p-4 rounded-xl border border-stone-700 h-80">
+                            <canvas id="kashiChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline & Features -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-stone-800 pt-12">
+                        <div>
+                            <h3 class="text-xl font-bold text-report-accent mb-6">Development Timeline</h3>
+                            <div class="space-y-0">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <span class="text-xs text-stone-400 block mb-1">March 8, 2019</span>
+                                    <h4 class="text-sm font-bold text-white">Foundation Stone</h4>
+                                    <p class="text-xs text-stone-400 mt-1">Laid by PM Narendra Modi.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot" style="background: #22c55e;"></div>
+                                    <span class="text-xs text-stone-400 block mb-1">Dec 13, 2021</span>
+                                    <h4 class="text-sm font-bold text-white">Inauguration</h4>
+                                    <p class="text-xs text-stone-400 mt-1">Opened to the world. A 400m pathway connecting Lalita Ghat to Mandir Chowk.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-report-accent mb-6">Architectural Features</h3>
+                            <p class="text-xs text-stone-400 mb-6">Built using Chunar red sandstone and Makrana marble in the Nagara style.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-stone-800 p-3 rounded border-l-2 border-report-accent"><h5 class="text-sm font-bold text-white">Mandir Chowk</h5><p class="text-xs text-stone-400">Massive open courtyard.</p></div>
+                                <div class="bg-stone-800 p-3 rounded border-l-2 border-report-accent"><h5 class="text-sm font-bold text-white">Ganga View Gallery</h5><p class="text-xs text-stone-400">Panoramic riverfront views.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. AYODHYA DEEP DIVE -->
+            <div id="ayodhya-deep-dive" class="bg-stone-900 text-white rounded-2xl overflow-hidden shadow-2xl">
+                <div class="bg-report-accent p-8 md:p-12 text-center relative overflow-hidden">
+                    <div class="relative z-10">
+                        <span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Case Study</span>
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold mt-4">Ayodhya Ram Mandir</h2>
+                        <p class="text-lg md:text-xl mt-4 opacity-90 max-w-2xl mx-auto">"The Rashtra Mandir: Reclaiming cultural heritage and establishing a Global Spiritual Capital."</p>
+                    </div>
+                </div>
+
+                <div class="p-8 md:p-12 space-y-16">
+                    <!-- Global Scale -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-report-accent mb-6">Scale of the "Rashtra Mandir"</h3>
+                            <p class="text-stone-300 mb-8 text-sm leading-relaxed">
+                                The Ayodhya project is the linchpin of India's "Temple Economy." With a 1,000-year structural lifespan (Iron-Free) and a Surya Tilak mechanism, it blends ancient science with modern engineering.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Total Footfall 2024</div>
+                                    <div class="text-2xl font-bold text-white mt-1">11.2 Cr</div>
+                                    <div class="text-xs text-green-400 mt-1">Source: UP Tourism</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Annual Footfall 2025</div>
+                                    <div class="text-2xl font-bold text-white mt-1">5.8 Cr</div>
+                                    <div class="text-xs text-stone-400 mt-1">Sustained Volume</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Total Investment</div>
+                                    <div class="text-2xl font-bold text-white mt-1">₹32,000 Cr</div>
+                                    <div class="text-xs text-stone-400 mt-1">Temple + City Infra</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Crowdfunding</div>
+                                    <div class="text-2xl font-bold text-white mt-1">₹3,500 Cr</div>
+                                    <div class="text-xs text-green-400 mt-1">100% Public Funded</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-stone-800 p-4 rounded-xl border border-stone-700 h-80">
+                            <canvas id="ayodhyaChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-stone-800 pt-12">
+                        <div>
+                            <h3 class="text-xl font-bold text-report-accent mb-6">Development Timeline</h3>
+                            <div class="space-y-0">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <span class="text-xs text-stone-400 block mb-1">Nov 9, 2019</span>
+                                    <h4 class="text-sm font-bold text-white">The Verdict</h4>
+                                    <p class="text-xs text-stone-400 mt-1">Supreme Court hands over land.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <span class="text-xs text-stone-400 block mb-1">Jan 22, 2024</span>
+                                    <h4 class="text-sm font-bold text-white">Pran Pratishtha</h4>
+                                    <p class="text-xs text-stone-400 mt-1">Consecration Ceremony. 20M visitors followed.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot" style="background: #22c55e;"></div>
+                                    <span class="text-xs text-stone-400 block mb-1">June 2025</span>
+                                    <h4 class="text-sm font-bold text-white">Project Completion</h4>
+                                    <p class="text-xs text-stone-400 mt-1">Main Shikhar (161ft) and 7 peripheral shrines fully consecrated.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-report-accent mb-6">Architectural Marvels</h3>
+                            <p class="text-xs text-stone-400 mb-6">Designed by the Sompura family in the Nagara style.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-stone-800 p-3 rounded border-l-2 border-report-accent"><h5 class="text-sm font-bold text-white">Iron-Free</h5><p class="text-xs text-stone-400">Est. lifespan: 1,000 years.</p></div>
+                                <div class="bg-stone-800 p-3 rounded border-l-2 border-report-accent"><h5 class="text-sm font-bold text-white">Surya Tilak</h5><p class="text-xs text-stone-400">Optomechanics sunlight system.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. MAHAKAL LOK (UJJAIN) DEEP DIVE -->
+            <div id="ujjain-deep-dive" class="bg-stone-900 text-white rounded-2xl overflow-hidden shadow-2xl">
+                <div class="bg-report-accent p-8 md:p-12 text-center">
+                    <span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Case Study</span>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold mt-4">Mahakal Lok Corridor</h2>
+                    <p class="text-lg md:text-xl mt-4 opacity-90 max-w-2xl mx-auto">"Resurrecting Avantika: From a congested shrine to a 47-hectare spiritual theme park."</p>
+                </div>
+
+                <div class="p-8 md:p-12 space-y-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-report-accent mb-6">The Smart Pilgrim City</h3>
+                            <p class="text-stone-300 mb-8 text-sm leading-relaxed">
+                                Developed under the Smart Cities Mission, Mahakal Lok expanded the temple area by 7x, restoring the historic Rudrasagar Lake and decongesting the Jyotirlinga for millions.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Area Expansion</div>
+                                    <div class="text-2xl font-bold text-white mt-1">47 Hectares</div>
+                                    <div class="text-xs text-green-400 mt-1">Up from 2.8 Ha</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Project Cost</div>
+                                    <div class="text-2xl font-bold text-white mt-1">₹856 Cr</div>
+                                    <div class="text-xs text-stone-400 mt-1">Funded by State/Center/AFD</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Daily Capacity</div>
+                                    <div class="text-2xl font-bold text-white mt-1">1 Lakh+</div>
+                                    <div class="text-xs text-green-400 mt-1">Crowd Management</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Revenue Growth</div>
+                                    <div class="text-2xl font-bold text-white mt-1">₹370 Cr</div>
+                                    <div class="text-xs text-stone-400 mt-1">Municipal Rev (FY24)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-stone-800 p-4 rounded-xl border border-stone-700 h-80">
+                            <canvas id="mahakalChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-stone-800 pt-12">
+                        <div>
+                            <h3 class="text-xl font-bold text-report-accent mb-6">Timeline & Future</h3>
+                            <div class="space-y-0">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <span class="text-xs text-stone-400 block mb-1">Oct 11, 2022</span>
+                                    <h4 class="text-sm font-bold text-white">Phase 1 Inauguration</h4>
+                                    <p class="text-xs text-stone-400 mt-1">Unveiled by PM Modi. Footfall surged 3x shortly after.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot" style="background: #3b82f6;"></div>
+                                    <span class="text-xs text-stone-400 block mb-1">2026 (Ongoing)</span>
+                                    <h4 class="text-sm font-bold text-white">Phase 2 Advancing</h4>
+                                    <p class="text-xs text-stone-400 mt-1">Maharajwada heritage complex and Kumbh Museum construction accelerating for Simhastha 2028.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-report-accent mb-6">Design Philosophy</h3>
+                            <p class="text-xs text-stone-400 mb-6">Translating the Shiva Purana into stone and sculpture.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-stone-800 p-3 rounded border-l-2 border-report-accent"><h5 class="text-sm font-bold text-white">108 Stambhas</h5><p class="text-xs text-stone-400">Ornate sandstone pillars.</p></div>
+                                <div class="bg-stone-800 p-3 rounded border-l-2 border-report-accent"><h5 class="text-sm font-bold text-white">Mural Wall</h5><p class="text-xs text-stone-400">Depicting Shiv Vivah legends.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. JAGANNATH HERITAGE CORRIDOR (PURI) DEEP DIVE -->
+            <div id="puri-deep-dive" class="bg-stone-900 text-white rounded-2xl overflow-hidden shadow-2xl">
+                <div class="bg-report-accent p-8 md:p-12 text-center">
+                    <span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Case Study</span>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold mt-4">Jagannath Heritage Corridor</h2>
+                    <p class="text-lg md:text-xl mt-4 opacity-90 max-w-2xl mx-auto">"Srimandir Parikrama Prakalpa: Creating a secure, aesthetic 75-meter heritage zone."</p>
+                </div>
+
+                <div class="p-8 md:p-12 space-y-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-report-accent mb-6">Security & Aesthetics</h3>
+                            <p class="text-stone-300 mb-8 text-sm leading-relaxed">
+                                The project decluttered the 12th-century shrine's periphery, creating a 75-meter buffer zone for security and ritual parikrama, funded entirely by the Odisha State Government (ABADHA scheme).
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Corridor Cost</div>
+                                    <div class="text-2xl font-bold text-white mt-1">₹943 Cr</div>
+                                    <div class="text-xs text-stone-400 mt-1">Part of ₹4k Cr ABADHA</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Buffer Zone</div>
+                                    <div class="text-2xl font-bold text-white mt-1">75 Meters</div>
+                                    <div class="text-xs text-green-400 mt-1">Cleared of encroachments</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Peak Capacity</div>
+                                    <div class="text-2xl font-bold text-white mt-1">4 Lakhs</div>
+                                    <div class="text-xs text-stone-400 mt-1">Safe gathering size</div>
+                                </div>
+                                <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                                    <div class="text-xs text-stone-400 uppercase tracking-wide">Material</div>
+                                    <div class="text-2xl font-bold text-white mt-1">Khondalite</div>
+                                    <div class="text-xs text-stone-400 mt-1">Local reddish stone</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-stone-800 p-4 rounded-xl border border-stone-700 h-80">
+                            <canvas id="puriChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-stone-800 pt-12">
+                        <div>
+                            <h3 class="text-xl font-bold text-report-accent mb-6">Development Milestones</h3>
+                            <div class="space-y-0">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <span class="text-xs text-stone-400 block mb-1">Jan 17, 2024</span>
+                                    <h4 class="text-sm font-bold text-white">Inauguration</h4>
+                                    <p class="text-xs text-stone-400 mt-1">Project formally dedicated to devotees.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot" style="background: #fbbf24;"></div>
+                                    <span class="text-xs text-stone-400 block mb-1">2026 Perspective</span>
+                                    <h4 class="text-sm font-bold text-white">Future Connectivity</h4>
+                                    <p class="text-xs text-stone-400 mt-1">Greenfield International Airport planning underway.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-report-accent mb-6">Kalinga Design Features</h3>
+                            <p class="text-xs text-stone-400 mb-6">Strict adherence to regional aesthetics to blend with the 800-year-old shrine.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-stone-800 p-3 rounded border-l-2 border-report-accent"><h5 class="text-sm font-bold text-white">Sri Setu</h5><p class="text-xs text-stone-400">2.3km trumpet bridge.</p></div>
+                                <div class="bg-stone-800 p-3 rounded border-l-2 border-report-accent"><h5 class="text-sm font-bold text-white">Matha Redevelopment</h5><p class="text-xs text-stone-400">Historic monasteries preserved.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: CRITICAL CHALLENGES -->
+        <section id="challenges" class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+            <h2 class="text-3xl font-serif font-bold mb-6 text-red-900">6. Critical Challenges</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-700 leading-relaxed">
+                <div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">The Himalayan Crisis</h3>
+                    <p class="mb-3">Carrying capacity is being tested to the breaking point.</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Joshimath Sinking (2023):</strong> Land subsidence due to fragile geology and unchecked construction.</li>
+                        <li><strong>Kedarnath Waste:</strong> 26 tonnes generated in 2024 season; 17 tonnes remained unprocessed. Threat to Mandakini river.</li>
+                        <li><strong>Road Widening:</strong> 889 km Char Dham project linked to landslides and slope destabilization.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900">Urban & Social Friction</h3>
+                    <p class="mb-3">Scale of 100M+ visitors strains municipal limits.</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Overcrowding:</strong> Ayodhya Trust issued advisories asking locals to delay visits. Sewage/Water systems stressed.</li>
+                        <li><strong>Disneyfication:</strong> Risk of diluting sanctity. Transformation into "Tourism Products" with malls/plazas may alienate traditional pilgrims.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-report-border pt-12 pb-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h3 class="text-2xl font-serif font-bold mb-4">Vision 2030</h3>
+                <p class="text-gray-600 mb-8 italic">
+                    "If the government succeeds in its destination development strategy... India could position itself as the Spiritual Capital of the World. The challenge lies in managing this growth so that the pilgrim's progress does not become the environment's regress."
+                </p>
+                <div class="text-xs text-gray-400">
+                    <p>Report prepared by: Centre for Tourism Economics & Heritage Management</p>
+                    <p>Date: February 2026</p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- JS Logic -->
+    <script>
+        // --- CHARTS ---
+        window.addEventListener('load', () => {
+            
+            // 1. Market Growth Chart
+            const ctxMarket = document.getElementById('marketChart').getContext('2d');
+            new Chart(ctxMarket, {
+                type: 'bar',
+                data: {
+                    labels: ['Core 2024', 'Core 2030 (Est)', 'Broader 2024', 'Broader 2032 (Est)'],
+                    datasets: [{
+                        label: 'Market Size (USD Billion)',
+                        data: [10.8, 28.9, 202.85, 441.19],
+                        backgroundColor: ['#fed7aa', '#f97316', '#fdba74', '#9a3412'],
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: '#f3f4f6' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // 2. Expenditure Chart
+            const ctxSpend = document.getElementById('spendChart').getContext('2d');
+            new Chart(ctxSpend, {
+                type: 'bar',
+                indexAxis: 'y',
+                data: {
+                    labels: ['Religious Trip', 'Business Trip'],
+                    datasets: [{
+                        label: 'Avg Daily Spend (INR)',
+                        data: [2717, 4455],
+                        backgroundColor: ['#ea580c', '#d6d3d1'],
+                        barPercentage: 0.5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { beginAtZero: true },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // 3. Kashi Specific Chart (Dark Theme)
+            const ctxKashi = document.getElementById('kashiChart').getContext('2d');
+            new Chart(ctxKashi, {
+                type: 'line',
+                data: {
+                    labels: ['2015', '2017', '2019', '2021', '2022', '2023', '2024', '2025', '2026 (Projected)'],
+                    datasets: [{
+                        label: 'Annual Footfall (Crores)',
+                        data: [0.55, 0.62, 0.68, 0.35, 7.12, 8.55, 10.20, 11.50, 12.80], // Source: UP Tourism Dept
+                        borderColor: '#ea580c',
+                        backgroundColor: 'rgba(234, 88, 12, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false },
+                        title: { display: true, text: 'Kashi Footfall Trend (2015-2026)', color: '#a8a29e' }
+                    },
+                    scales: {
+                        x: { 
+                            grid: { color: '#44403c' },
+                            ticks: { color: '#a8a29e', font: { weight: 'bold', size: 10 } }
+                        },
+                        y: { 
+                            grid: { color: '#44403c' },
+                            ticks: { color: '#a8a29e' },
+                            title: {
+                                display: true,
+                                text: 'Visitors (in Crores)',
+                                color: '#a8a29e',
+                                font: { size: 12, weight: 'bold' }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 4. Ayodhya Trend Chart (2000-2026 Trend)
+            const ctxAyodhya = document.getElementById('ayodhyaChart').getContext('2d');
+            new Chart(ctxAyodhya, {
+                type: 'line',
+                data: {
+                    labels: ['2000', '2010', '2017', '2019', '2022', '2023', '2024', '2025', '2026 (Projected)'],
+                    datasets: [{
+                        label: 'Annual Footfall (Crores)',
+                        data: [0.85, 1.25, 1.78, 2.04, 2.39, 5.76, 11.21, 5.80, 6.50], // Authentic UP Tourism Data
+                        borderColor: '#ea580c',
+                        backgroundColor: 'rgba(234, 88, 12, 0.2)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false },
+                        title: { display: true, text: 'Ayodhya Footfall Trend (2000-2026)', color: '#a8a29e' }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true, 
+                            grid: { color: '#44403c' },
+                            ticks: { color: '#a8a29e' },
+                            title: {
+                                display: true,
+                                text: 'Visitors (in Crores)',
+                                color: '#a8a29e',
+                                font: { size: 12, weight: 'bold' }
+                            }
+                        },
+                        x: { 
+                            grid: { color: '#44403c' },
+                            ticks: { color: '#fff', font: { weight: 'bold', size: 10 } }
+                        }
+                    }
+                }
+            });
+
+            // 5. Mahakal (Ujjain) Trend Chart
+            const ctxMahakal = document.getElementById('mahakalChart').getContext('2d');
+            new Chart(ctxMahakal, {
+                type: 'line',
+                data: {
+                    labels: ['2015', '2020', '2022 (Phase 1)', '2023', '2024', '2025', '2026 (Projected)'],
+                    datasets: [{
+                        label: 'Annual Footfall (Crores)',
+                        data: [1.5, 1.5, 3.0, 5.28, 6.0, 6.5, 7.0], // Pre-corridor baseline vs post-inauguration surge
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false },
+                        title: { display: true, text: 'Ujjain Footfall Surge (2015-2026)', color: '#a8a29e' }
+                    },
+                    scales: {
+                        x: { 
+                            grid: { color: '#44403c' },
+                            ticks: { color: '#a8a29e', font: { weight: 'bold', size: 10 } }
+                        },
+                        y: { 
+                            grid: { color: '#44403c' },
+                            ticks: { color: '#a8a29e' },
+                            title: { display: true, text: 'Visitors (in Crores)', color: '#a8a29e' }
+                        }
+                    }
+                }
+            });
+
+            // 6. Puri Trend Chart
+            const ctxPuri = document.getElementById('puriChart').getContext('2d');
+            new Chart(ctxPuri, {
+                type: 'line',
+                data: {
+                    labels: ['2018', '2020', '2022', '2023', '2024 (Inauguration)', '2025', '2026 (Projected)'],
+                    datasets: [{
+                        label: 'Annual Footfall (Crores)',
+                        data: [1.2, 0.8, 1.4, 1.5, 2.5, 2.8, 3.2], // Steady growth with post-corridor bump
+                        borderColor: '#fbbf24',
+                        backgroundColor: 'rgba(251, 191, 36, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false },
+                        title: { display: true, text: 'Puri Visitor Trend (2018-2026)', color: '#a8a29e' }
+                    },
+                    scales: {
+                        x: { 
+                            grid: { color: '#44403c' },
+                            ticks: { color: '#a8a29e', font: { weight: 'bold', size: 10 } }
+                        },
+                        y: { 
+                            grid: { color: '#44403c' },
+                            ticks: { color: '#a8a29e' },
+                            title: { display: true, text: 'Visitors (in Crores)', color: '#a8a29e' }
+                        }
+                    }
+                }
+            });
+
+        });
+
+        // --- ACCORDION LOGIC ---
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(`icon-${id}`);
+            const isOpen = content.classList.contains('open');
+
+            // Close all others (Optional - remove if you want multiple open)
+            document.querySelectorAll('.accordion-content').forEach(el => {
+                el.classList.remove('open');
+            });
+            document.querySelectorAll('[id^="icon-"]').forEach(el => {
+                el.style.transform = 'rotate(0deg)';
+                el.innerText = '+';
+            });
+
+            if (!isOpen) {
+                content.classList.add('open');
+                icon.style.transform = 'rotate(45deg)';
+                icon.innerText = '×'; // Close symbol
+            }
+        }
+    </script>
+</body>
+</html>
